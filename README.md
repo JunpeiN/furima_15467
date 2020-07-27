@@ -1,24 +1,37 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column           | Type    | Options     |
+| ---------------- | ------- | ----------- |
+| name             | string  | null: false |
+| email            | string  | null: false |
+| password         | string  | null: false |
+| family_name      | string  | null: false |
+| first_name       | string  | null: false |
+| family_name_kana | string  | null: false |
+| first_name_kana  | string  | null: false |
+| birth_year       | integer | null: false |
+| birth_month      | integer | null: false |
+| birth_day        | integer | null: false |
 
-* Ruby version
+### Association
+- has_many :products
 
-* System dependencies
+## products テーブル
 
-* Configuration
+| Column         | Type    | Options     |
+| -------------- | ------- | ----------- |
+| name           | string  | null: false |
+| img            | string  | null: false |
+| price          | integer | null: false |
+| user_name      | string  | null: false |
+| delivery_cost  | string  | null: false |
+| prefectures    | string  | null: false |
+| until_shipping | string  | null: false |
+| category       | string  | null: false |
+| status         | string  | null: false |
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+- belong_to :user
