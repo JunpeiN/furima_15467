@@ -15,7 +15,6 @@
 
 ### Association
 - has_many :products
-- has_many :addresses
 - has_many :managements
 
 ## products テーブル
@@ -25,18 +24,24 @@
 | name           | string  | null: false |
 | img            | string  | null: false |
 | price          | integer | null: false |
+| delivery_cost  | integer | null: false |
+| prefecture     | integer | null: false |
+| until_shipping | integer | null: false |
+| category       | integer | null: false |
+| status         | integer | null: false |
 | user           | references | null: false, foreign_key: true |
 
 ### Association
 - belong_to :user
-- belong_to :addresses
-- belong_to :management
+- has_one :address
+- has_one :management
 
 
 ## addresses テーブル
 | Column           | Type    | Options     |
 | ---------------- | ------- | ----------- |
 | postal_code      | integer | null: false |
+| prefecture       | integer | null: false |
 | city             | string  | null: false |
 | address          | string  | null: false |
 | building_name    | string  |             |
@@ -46,7 +51,6 @@
 
 
 ### Association
-- belong_to :user
 - belong_to :product
 
 ## managements テーブル
