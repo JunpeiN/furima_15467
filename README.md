@@ -29,7 +29,7 @@
 | until_shipping | integer | null: false |
 | category       | integer | null: false |
 | status         | integer | null: false |
-| description    | string  | null: false |
+| description    | text    | null: false |
 | user           | references | null: false, foreign_key: true |
 
 ### Association
