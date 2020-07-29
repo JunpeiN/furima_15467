@@ -10,5 +10,5 @@ class User < ApplicationRecord
   validates :family_name_kana, presence: true,format: { with: /\A[ァ-ヶー－]+\z/}
   validates :first_name_kana, presence: true,format: { with: /\A[ァ-ヶー－]+\z/}
   validates :birthday, presence: true
-  validates :password,confirmation: true,format: { with: /\A(?=.*?[a-z])[a-z\d]{6,}+\z/}
+  validates :password,confirmation: true,format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,}+\z/}
 end
