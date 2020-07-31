@@ -14,10 +14,10 @@
 | birthday         | data    | null: false |
 
 ### Association
-- has_many :products
+- has_many :items
 - has_many :managements
 
-## products テーブル
+## items テーブル
 
 | Column         | Type    | Options     |
 | -------------- | ------- | ----------- |
@@ -47,20 +47,20 @@
 | address       | string  | null: false |
 | building_name | string  |             |
 | phone_number  | string  | null: false |
-| product       | references | null: false, foreign_key: true |
+| item          | references | null: false, foreign_key: true |
 
 
 ### Association
-- belong_to :product
+- belong_to :item
 
 ## managements テーブル
 
 | Column  | Type    | Options     |
 | --------| ------- | ----------- |
 | user    | references | null: false, foreign_key: true |
-| product | references | null: false, foreign_key: true |
+| item    | references | null: false, foreign_key: true |
 
 
 ### Association
 - belong_to :user
-- belong_to :product
+- belong_to :item
