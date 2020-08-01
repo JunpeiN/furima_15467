@@ -5,6 +5,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :status
   belongs_to_active_hash :until_shipping
+  belong_to :user
 
   with_options presence: true do
     validates :name
@@ -17,7 +18,7 @@ class Item < ApplicationRecord
     validates :status
     validates :until_shipping
   end
-  
+
   with_options numericality: { other_than: 1 }  do
     validates :category_id
     validates :delivery_cost_id
