@@ -126,7 +126,7 @@
     <% if user_signed_in? %>
     <%= link_to '新規投稿商品',new_item_path, class: "subtitle" %>
     <% else %>
-    <%= link_to '新規投稿商品',root_path, class: "subtitle" %>
+    <%= link_to '新規投稿商品',user_session_path, class: "subtitle" %>
     <% end %>
     <ul class='item-lists'>
 
