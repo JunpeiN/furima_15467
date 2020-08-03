@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :items
+
   zkaku = /\A[ぁ-んァ-ン一-龥]/
   zkana = /\A[ァ-ヶー－]+\z/
   eisu = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,}+\z/
