@@ -53,7 +53,7 @@
 ### Association
 - belong_to :item
 
-## managements テーブル
+## buyers テーブル
 
 | Column  | Type    | Options     |
 | --------| ------- | ----------- |
