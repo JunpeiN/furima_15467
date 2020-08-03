@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :items
+  has_many :buyers
 
   zkaku = /\A[ぁ-んァ-ン一-龥]/
   zkana = /\A[ァ-ヶー－]+\z/

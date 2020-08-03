@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :item do
-    name            { "テスト商品" }
+    name            { 'テスト商品' }
     price           { 300 }
     delivery_cost_id   { 2 }
     until_shipping_id  { 2 }

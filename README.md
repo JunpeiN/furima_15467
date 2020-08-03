@@ -15,7 +15,7 @@
 
 ### Association
 - has_many :items
-- has_many :managements
+- has_many :buyers
 
 ## items テーブル
 
@@ -35,7 +35,7 @@
 ### Association
 - belong_to :user
 - has_one :address
-- has_one :management
+- has_one :buyer
 
 
 ## addresses テーブル
@@ -53,7 +53,7 @@
 ### Association
 - belong_to :item
 
-## managements テーブル
+## buyers テーブル
 
 | Column  | Type    | Options     |
 | --------| ------- | ----------- |

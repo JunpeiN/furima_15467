@@ -7,6 +7,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :until_shipping
   belongs_to :user
   has_one_attached :image
+  has_one :buyer
 
   with_options presence: true do
     validates :name
