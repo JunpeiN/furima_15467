@@ -22,7 +22,7 @@
 | Column         | Type    | Options     |
 | -------------- | ------- | ----------- |
 | name           | string  | null: false |
-| img            | string  | null: false |
+| image          | string  | null: false |
 | price          | integer | null: false |
 | delivery_cost  | integer | null: false |
 | prefecture     | integer | null: false |
