@@ -1,4 +1,7 @@
 class AddressesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :redirect_root
+  
   def index
     @item = Item.find(params[:item_id])
     @address = ItemAddress.new
@@ -30,5 +33,13 @@ class AddressesController < ApplicationController
       card: params[:token],
       currency:'jpy'
     )
+  end
+
+  def redirect_root
+    user = current_user.id
+    user_id = Item.find(params[:item_id]).user_id
+    if user == user_id
+    redirect_to root_path
+    end
   end
 end
