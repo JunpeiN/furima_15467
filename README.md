@@ -44,7 +44,7 @@
 | postal_code   | integer | null: false |
 | prefecture    | integer | null: false |
 | city          | string  | null: false |
-| address       | string  | null: false |
+| home_number   | string  | null: false |
 | building_name | string  |             |
 | phone_number  | string  | null: false |
 | item          | references | null: false, foreign_key: true |
