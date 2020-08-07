@@ -44,6 +44,8 @@ class AddressesController < ApplicationController
     user = current_user.id
     user_id = Item.find(params[:item_id]).user_id
     item_id = Item.find(params[:item_id]).id
-    redirect_to root_path if user == user_id || Address.exists?(item_id: item_id)
+    if user == user_id || Address.exists?(item_id: item_id)
+     redirect_to root_path
+    end
   end
 end
