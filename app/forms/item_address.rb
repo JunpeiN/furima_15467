@@ -1,13 +1,16 @@
 class ItemAddress
   include ActiveModel::Model
   attr_accessor :home_number, :item_id, :user_id, :postal_code, :prefecture_id, :city, :building_name, :phone_number
+ 
+  phone_number_regex = /\A\d{11}\z/
+  postal_code_regex = /\A\d{3}[-]\d{4}\z/
 
   with_options presence: true do
     validates :prefecture_id, numericality: { other_than: 1 }
     validates :city
     validates :home_number
-    validates :phone_number, format: { with: /\A\d{11}\z/ }
-    validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/ }
+    validates :phone_number, format: { with: phone_number_regex }
+    validates :postal_code, format: { with: postal_code_regex }
   end
 
   def save
