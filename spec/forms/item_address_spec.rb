@@ -4,7 +4,7 @@ RSpec.describe ItemAddress, type: :model do
   describe '#create' do
     before do
       @address = FactoryBot.build(:item_address)
-      payjp_customer = double("Payjp::Charge")
+      payjp_customer = double('Payjp::Charge')
       allow(Payjp::Charge).to receive(:create).and_return(payjp_customer)
     end
 
@@ -19,9 +19,9 @@ RSpec.describe ItemAddress, type: :model do
     end
 
     it '郵便番号にハイフンがないと登録できないこと' do
-      @address.postal_code = 1234567
+      @address.postal_code = 1_234_567
       @address.valid?
-      expect(@address.errors.full_messages).to include("Postal code is invalid")
+      expect(@address.errors.full_messages).to include('Postal code is invalid')
     end
 
     it 'prefectureを選択しないと登録できないこと' do
@@ -39,7 +39,7 @@ RSpec.describe ItemAddress, type: :model do
     it 'home_numberが空だと登録できないこと' do
       @address.home_number = nil
       @address.valid?
-      
+
       expect(@address.errors.full_messages).to include("Home number can't be blank")
     end
 
@@ -57,7 +57,7 @@ RSpec.describe ItemAddress, type: :model do
     it 'phone_numberが12桁以上だと登録できないこと' do
       @address.phone_number = '090123456789'
       @address.valid?
-      expect(@address.errors.full_messages).to include("Phone number is invalid")
+      expect(@address.errors.full_messages).to include('Phone number is invalid')
     end
   end
 end
