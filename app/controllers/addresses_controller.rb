@@ -35,10 +35,13 @@ class AddressesController < ApplicationController
     )
   end
 
+  #出品者はURLを直接入力して購入ページに遷移しようとすると、トップページに遷移する
+  #URLを直接入力して購入済みの商品ページへ遷移しようとすると、トップページに遷移すること
   def redirect_root
     user = current_user.id
     user_id = Item.find(params[:item_id]).user_id
-    if user == user_id
+    item_id = Item.find(params[:item_id]).id
+    if user == user_id || Address.exists?(item_id: item_id)
     redirect_to root_path
     end
   end
