@@ -123,11 +123,7 @@
   <%# 商品一覧 %>
   <div class='item-contents'>
     <h2 class='title'>ピックアップカテゴリー</h2>
-    <% if user_signed_in? %>
-    <%= link_to '新規投稿商品',new_item_path, class: "subtitle" %>
-    <% else %>
-    <%= link_to '新規投稿商品',user_session_path, class: "subtitle" %>
-    <% end %>
+    <%= link_to '新規投稿商品',new_item_path,data: {"turbolinks"=>false}, class: "subtitle" %>
     <ul class='item-lists'>
       <% if @items.present?%>
         <% @items.each do |item| %>
@@ -183,8 +179,8 @@
 </div>
 <div class='purchase-btn'>
   <span class='purchase-btn-text'>出品する</span>
-  <a href="#">
+  <%= link_to new_item_path do %>
     <%= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
-  </a>
+  <% end %>
 </div>
 <%= render "shared/footer" %>

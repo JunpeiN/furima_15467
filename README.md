@@ -33,7 +33,7 @@
 | user           | references | null: false, foreign_key: true |
 
 ### Association
-- belong_to :user
+- belongs_to :user
 - has_one :address
 - has_one :buyer
 
@@ -41,17 +41,17 @@
 ## addresses テーブル
 | Column        | Type    | Options     |
 | ------------- | ------- | ----------- |
-| postal_code   | integer | null: false |
+| postal_code   | string  | null: false |
 | prefecture    | integer | null: false |
 | city          | string  | null: false |
-| address       | string  | null: false |
+| home_number   | string  | null: false |
 | building_name | string  |             |
 | phone_number  | string  | null: false |
 | item          | references | null: false, foreign_key: true |
 
 
 ### Association
-- belong_to :item
+- belongs_to :item
 
 ## buyers テーブル
 
@@ -62,5 +62,5 @@
 
 
 ### Association
-- belong_to :user
-- belong_to :item
+- belongs_to :user
+- belongs_to :item
