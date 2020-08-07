@@ -8,7 +8,7 @@ class ItemAddress
     validates :city 
     validates :home_number
     validates :phone_number,format: { with: /\A\d{11}\z/}
-    validates :postal_code,format: { with: /\A\d{3}[-]\d{4}\z/}
+    validates :postal_code,format: { with: /\A\d{3}[-]\d{4}\z/ }
   end
 
   def save
