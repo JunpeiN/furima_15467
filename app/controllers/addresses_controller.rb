@@ -4,21 +4,18 @@ class AddressesController < ApplicationController
 
   def index
     @item = Item.find(params[:item_id])
-  end
-
-  def new
     @address = ItemAddress.new
   end
 
   def create
     @address = ItemAddress.new(address_params)
-
     if @address.valid?
       pay_item
       @address.save
       redirect_to root_path
     else
-      render 'new'
+      @item = Item.find(params[:item_id])
+      render 'index'
     end
   end
 
