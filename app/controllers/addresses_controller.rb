@@ -22,7 +22,7 @@ class AddressesController < ApplicationController
   private
 
   def address_params
-    params.permit(:tokun, :home_number, :item_id, :postal_code, :prefecture_id, :city, :building_name, :phone_number).merge(user_id: current_user.id)
+    params.require(:item_address).permit(:tokun,:home_number, :postal_code, :prefecture_id, :city, :building_name, :phone_number).merge(user_id: current_user.id,item_id: params[:item_id])
   end
 
   def pay_item
