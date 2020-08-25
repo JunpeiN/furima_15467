@@ -27,7 +27,7 @@ RSpec.describe ItemAddress, type: :model do
     it 'prefectureを選択しないと登録できないこと' do
       @address.prefecture_id = 1
       @address.valid?
-      expect(@address.errors.full_messages).to include('Prefecture must be other than 1')
+      expect(@address.errors.full_messages).to include('Prefecture を選んでください')
     end
 
     it 'cityが空では登録できないこと' do

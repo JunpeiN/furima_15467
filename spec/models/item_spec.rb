@@ -44,31 +44,32 @@ RSpec.describe Item, type: :model do
     it 'prefectureを選択しないと登録できないこと' do
       @item.prefecture_id = 1
       @item.valid?
-      expect(@item.errors.full_messages).to include('Prefecture must be other than 1')
+      
+      expect(@item.errors.full_messages).to include('Prefecture を選んでください')
     end
 
     it 'categoryを選択しないと登録できないこと' do
       @item.category_id = 1
       @item.valid?
-      expect(@item.errors.full_messages).to include('Category must be other than 1')
+      expect(@item.errors.full_messages).to include('Category を選んでください')
     end
 
     it 'statusを選択しないと登録できないこと' do
       @item.status_id = 1
       @item.valid?
-      expect(@item.errors.full_messages).to include('Status must be other than 1')
+      expect(@item.errors.full_messages).to include('Status を選んでください')
     end
 
     it 'unti]_shippingを選択しないと登録できないこと' do
       @item.until_shipping_id = 1
       @item.valid?
-      expect(@item.errors.full_messages).to include('Until shipping must be other than 1')
+      expect(@item.errors.full_messages).to include('Until shipping を選んでください')
     end
 
     it 'delivery_costを選択しないと登録できないこと' do
       @item.delivery_cost_id = 1
       @item.valid?
-      expect(@item.errors.full_messages).to include('Delivery cost must be other than 1')
+      expect(@item.errors.full_messages).to include('Delivery cost を選んでください')
     end
 
     it 'imageが空では登録できないこと' do
