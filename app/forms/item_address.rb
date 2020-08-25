@@ -6,7 +6,7 @@ class ItemAddress
   postal_code_regex = /\A\d{3}[-]\d{4}\z/
 
   with_options presence: true do
-    validates :prefecture_id, numericality: { other_than: 1 }
+    validates :prefecture_id, numericality: { other_than: 1, message: "を選んでください" }
     validates :city
     validates :home_number
     validates :phone_number, format: { with: phone_number_regex }

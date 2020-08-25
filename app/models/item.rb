@@ -22,7 +22,7 @@ class Item < ApplicationRecord
     validates :until_shipping
   end
 
-  with_options numericality: { other_than: 1 } do
+  with_options numericality: { other_than: 1, message: "を選んでください"} do
     validates :category_id
     validates :delivery_cost_id
     validates :prefecture_id
@@ -30,3 +30,4 @@ class Item < ApplicationRecord
     validates :until_shipping_id
   end
 end
+
