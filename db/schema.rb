@@ -37,12 +37,12 @@ ActiveRecord::Schema.define(version: 2020_08_25_042945) do
     t.string "postal_code", null: false
     t.integer "prefecture_id", null: false
     t.string "city", null: false
+    t.string "home_number", null: false
     t.string "building_name"
     t.string "phone_number", null: false
     t.bigint "item_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "home_number"
     t.index ["item_id"], name: "index_addresses_on_item_id"
   end
 
