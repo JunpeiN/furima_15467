@@ -86,13 +86,13 @@
   <div id ='comments' >
       <% if @comments %>
         <% @comments.each do |comment| %>
-        <p>
+        <div class="comment-index" >
           <strong><%=comment.user.nickname %>：</strong>
           <%= comment.text %>
           <% if (user_signed_in? && current_user.nickname == @item.user.nickname) || (user_signed_in? && current_user.id == comment.user_id) %>
           <%= link_to '削除', item_comment_path(comment.id), method: :delete %>
           <% end %>
-        </p>
+        </div>
       <% end %>
     <% end %>
   </div>

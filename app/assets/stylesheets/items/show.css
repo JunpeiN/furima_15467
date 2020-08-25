@@ -162,6 +162,13 @@
   text-align: left;
 }
 
+.comment-index {
+  padding: 10px;
+  margin: 5px;
+  border: 2px solid #3CCACE;
+  border-radius: 10px;
+}
+
 .comment-btn {
   line-height: 48px;
   background-color: #3CCACE;
