@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :items
   has_many :buyers
+  has_many :comments
 
   zkaku = /\A[ぁ-んァ-ン一-龥]/
   zkana = /\A[ァ-ヶー－]+\z/
