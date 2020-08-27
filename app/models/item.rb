@@ -30,5 +30,14 @@ class Item < ApplicationRecord
     validates :status_id
     validates :until_shipping_id
   end
+
+  def self.search(search)
+    if search != ""
+      Item.where('name LIKE(?)', "%#{search}%")
+    else
+      Item.all
+    end
+  end
+
 end
 

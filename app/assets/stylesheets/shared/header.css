@@ -34,16 +34,18 @@
 }
 
 .search-button {
-  width: 5vh;
+  width: 5vw;
   border: 0;
   cursor: pointer;
   background-color: #3ccace;
-  padding: 8px;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
 
-.search-icon {
-  width: 100%;
-}
+
 
 .nav {
   font-size: 18px;

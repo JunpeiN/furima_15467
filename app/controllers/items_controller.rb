@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :set_item, only: [:show, :edit]
 
   def index
@@ -43,6 +43,10 @@ class ItemsController < ApplicationController
   def show
       @comment = Comment.new
       @comments = @item.comments.order('created_at DESC').includes(:user)
+  end
+
+  def search
+    @items = Item.search(params[:keyword])
   end
 
   private
