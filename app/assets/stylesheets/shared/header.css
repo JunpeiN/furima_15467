@@ -33,6 +33,10 @@
   padding-left: 10px;
 }
 
+.search-input{
+  width: 100%;
+}
+
 .search-button {
   width: 5vw;
   border: 0;
